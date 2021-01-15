@@ -17,7 +17,7 @@
 
 <body>
 
-  <div class="container">
+  <div class="container py-3">
 
     <div class="row g-3 row-cols-1 row-cols-xl-2">
 
@@ -28,29 +28,11 @@
             <h6 class="card-title fw-bold mb-3 text-center">Target RAG Rating Usage - Over Time</h6>
 
             <div class="row g-2 justify-content-md-center">
-
-              <div class="col-auto">
-                <label for="usageCount" class="small">View</label>
-                <select id="usageCount" class="form-select form-select-sm">
-                  <option>Targets RAG rated</option>
-                  <option>Estabs. which RAG rated at least 1 target</option>
-                  <option>Estabs. which RAG rated for the first time</option>
-                </select>
-              </div>
-
-              <div class="col-auto">
-                <label for="usageAcadYr" class="small">Acad. Yr.</label>
-                <select id="usageAcadYr" class="form-select form-select-sm">
-                  <option>2018/19</option>
-                  <option>2019/20</option>
-                  <option selected>2020/21</option>
-                </select>
-              </div>
-
-            </div>
           </div>
           <div class="card-body">
-            <canvas id="usageOverTimeChart" class="ratio ratio-16x9"></canvas>
+            <div class="position-relative ratio ratio-16x9">
+              <canvas id="usageOverTimeChart"></canvas>
+            </div>
             <div>
               <ul class="list-group list-group-horizontal text-center row m-0 mt-2">
                 <li class="list-group-item col">
@@ -91,7 +73,9 @@
           <div class="card-body">
             <div class="row align-items-center justify-content-center">
               <div class="col">
-                <canvas id="usagePointInTimeChart" class="ratio ratio-1x1"></canvas>
+                <div class="position-relative ratio ratio-1x1">
+                  <canvas id="usagePointInTimeChart"></canvas>
+                </div>
               </div>
               <div class="col text-center">
                 <div class="display-1 text-success fw-bold">33%</div>
@@ -170,6 +154,7 @@
             font: { weight: "bold" }
           }
         },
+        maintainAspectRatio: true,
         aspectRatio: 1
       }
     });
